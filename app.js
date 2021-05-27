@@ -8,7 +8,9 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 function sum(a, b) {
-// Write your code here
+  let sum = a + b;
+  let string = `The sum of ${a} and ${b} is ${sum}.`;  
+  return[sum, string];
 }
 // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
