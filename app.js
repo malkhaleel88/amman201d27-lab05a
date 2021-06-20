@@ -7,10 +7,10 @@ Write a function called sum() that takes in two numbers as arguments and then re
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
-function sum(a, b){
+function sum(a, b) {
   let sum = a + b;
-  let string = `The sum of ${a} and ${b} is ${sum}.`;  
-  return[sum, string];
+  let string = `The sum of ${a} and ${b} is ${sum}.`;
+  return [sum, string];
 }
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -29,11 +29,11 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) {
   let multi = a * b;
   let string = `The product of ${a} and ${b} is ${multi}.`;
-  return[multi, string];
+  return [multi, string];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -50,17 +50,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
- let n = sum(a, b)[0];
- let newsum = sum(n, c)[0];
- let d = multiply(a, b)[0];
- let newmulti = multiply(d, c)[0];
- let string1 = `${a} and ${b} and ${c} sum to ${newsum}.`;
- let string2 = `The product of ${a} and ${b} and ${c} is ${newmulti}.`;
- return[newsum, newmulti, string1, string2];
+  let n = sum(a, b)[0];
+  let newsum = sum(n, c)[0];
+  let d = multiply(a, b)[0];
+  let newmulti = multiply(d, c)[0];
+  let string1 = `${a} and ${b} and ${c} sum to ${newsum}.`;
+  let string2 = `The product of ${a} and ${b} and ${c} is ${newmulti}.`;
+  return [newsum, newmulti, string1, string2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -79,7 +79,7 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
   let z = sumAndMultiply(testArray[0], testArray[1], testArray[2])[0];
-  return[z, `${2},${3},${4} was passed in as an array of numbers, and ${z} is their sum.`];
+  return [z, `${2},${3},${4} was passed in as an array of numbers, and ${z} is their sum.`];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -101,7 +101,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
   let x = sumAndMultiply(testArray[0], testArray[1], testArray[2])[1];
-  return[x, `The numbers ${2},${3},${4} have a product of ${x}.`];
+  return [x, `The numbers ${2},${3},${4} have a product of ${x}.`];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
@@ -127,14 +127,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
-let x = 1;
-function multiplyAnyArray(dynamicArray){
-  for (let m = 0; m < multiplyAnyArray.length; m++) {
-      x = multiply(x, dynamicArray[m])[0];
+
+function multiplyAnyArray(dynamicArray) {
+  let x = 1;
+  for (let m = 0; m < dynamicArray.length; m++) {
+    x = multiply(x, dynamicArray[m])[0];
   }
-    return[x, `The numbers ${1},${2},${3},${4},${5} have a product of ${x}.`];
+  
+  return [x, `The numbers ${dynamicArray} have a product of ${x}.`]; 
 }
- 
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray);
